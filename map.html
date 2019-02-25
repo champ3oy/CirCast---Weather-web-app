@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CirCast | Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/error-icon.css" />
+   <!-- <link rel="stylesheet" href="leaflet/leaflet.css" />-->
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+        integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+        crossorigin=""></script>
+    
+    <style>
+                #mapid {
+                    width: 55vh; 
+                    height: 90vh;
+                    display: flex;
+                    margin-top: 0vh;
+                }
+        
+        .body {
+            margin-left: 0px;
+            
+        }
+        body {
+            background: linear-gradient(#00ffbf, #00e6ac);
+        }
+        #loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #00e6ac;
+        }
+        .location {
+            margin-left: 22px;
+        }
+        .bak {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            margin-top: -1vh;
+            margin-right: ;
+        }
+        .error-icon {
+            margin-right: 3vh;
+        }
+        
+        /*loadr aninator*/
+        .animate-bottom {
+  position: relative;
+  -webkit-animation-name: animateleft;
+  -webkit-animation-duration: 1s;
+  animation-name: animateleft;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animateleft {
+  from { left:-100px; opacity:0 } 
+  to { left:0px; opacity:1 }
+}
+
+@keyframes animateleft { 
+  from{ left:-100px; opacity:0 } 
+  to{ left: 0; opacity:1 }
+}
+    </style>
+    
+    <script>
+
+    </script>
+
+</head>
+
+<body onload="myFunction()" class="bd">
+    <img src="img/no-internet.png" class="error-icon" name="ei" />
+    <img src="img/no-location.png" class="error-loc" name="ei" />
+    <div class="body">
+
+        <div id="loader"></div>
+        <div style="display: none;" id="myDiv" class="animate-bottom">
+            
+            
+        
+        <div class="location">
+            <a href="index.html" class="back"> <img src="img/back-arrow.png" class="bak" />    </a>
+        <h1 class="location-timezone">Location</h1>
+        <div class="icon-con">
+        <canvas class="icon2" width="70" height="70"></canvas>
+        </div>
+    </div>
+    
+    <div class="temperature">
+        <div class="degree-section">
+        <h2 class="temperature-degree">loading</h2>
+            <span>F</span>
+        </div>
+        
+        <div class="temperature-description">loading</div>
+    </div>
+
+        
+
+            <div id="mapid"></div>
+            <style>
+                #mapid {
+                    width: 55vh; 
+                    height: 60vh;
+                    display: flex;
+                    margin-top: 0vh;
+                    
+                }
+            </style>
+            
+            <!--Javascripy-->
+           <!-- <script src="leaflet/leaflet.js"></script>-->
+            <script>
+        
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(position => {
+                        console.log(position);
+                        var long = position.coords.longitude;
+                        var lat = position.coords.latitude;
+                        
+                var mymap = L.map('mapid').setView([lat, long], 11);
+                L.tileLayer('https://tile.jawg.io/f5605dd8-a840-47a4-bcd1-3b884482d100/{z}/{x}/{y}.png?access-token=cC2AnS3C4TUJmcAjpBL9xlwKoDf358O4Y0AWTsEVijAFc4j1oXm3Ne2MEUn3Q19h', {}).addTo(mymap);
+        mymap.attributionControl.addAttribution("<a href=\"https://www.jawg.io\" target=\"_blank\">&copy; Jawg</a> - <a href=\"https://www.openstreetmap.org\" target=\"_blank\">&copy; OpenStreetMap</a>&nbsp;contributors")
+                        console.log("connected/trying to connect to map");
+                // Add pointer
+                L.marker([lat, long]).addTo(mymap);
+                    });
+                }
+                
+            </script>
+            <script>
+                var myVar;
+
+                function myFunction() {
+                    myVar = setTimeout(showPage, 5000);
+                }
+
+                function showPage() {
+                    document.getElementById("loader").style.display = "none";
+                    document.getElementById("myDiv").style.display = "block";
+                }
+
+            </script>
+            <script src="js/skycons.js"></script>
+            <script src="js/map.js"></script>
+
+            <!-- Welcome to my first javascript project with is a weather app for showing wheather conditions
+developer is Akoto Selorm Jonathan (Cirlorm)
+javascript developer -->
+        </div>
+</body>
+
+</html>

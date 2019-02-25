@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(blue, cyan);
+    font-family: sans-serif;
+    color: white;
+}
+.body {
+    font-size: 20px;
+    margin-left: 15px;
+}
+.error-icon {
+    width: 50px;
+    margin-right: 1vh;
+}
+.map-h {
+    margin-top: 10px;
+    
+}
+.date-con {
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+    font-family: monospace;
+    
+}
+.location,
+.temperature {
+    height: 20vh;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+.icon {
+    
+}
+a {
+    color: white;
+    font-size: 12px;
+    font-family: monospace;
+    margin-top: 10px;
+}
+}
+.body {
+    margin-top: 2vh;
+    font-size: 20px;
+    margin-left: 43px;
+}
+.temperature {
+    flex-direction: column;
+    margin-left: 20px;
+}
+.degree-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.degree-sectioin span {
+    margin: 10px;
+    font-size: 50px;
+}
+.degree-section h2 {
+    font-size: 40px;
+}
+.info {
+    margin-top: 3vh;
+}
+.credits {
+    font-family: monospace;
+    font-size: 9px;
+    align-content: center;
+}
+img {
+    float: inherit;
+    margin-left: 3%;
+}
+.footer {
+    margin-top: 10vh;
+    margin-bottom: 5px;
+}
+.table {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    //
+    width: 50%;
+    height: 25%;
+    text-align: center;
+}
+
+        /* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+
+
+
+
+
+

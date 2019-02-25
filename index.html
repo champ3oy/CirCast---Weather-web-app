@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CirCast | Wheather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/error-icon.css" />
+</head>
+    
+<body onload="myFunction()" class="bd">
+    <img src="img/no-internet.png" class="error-icon" name="ei" />
+    <img src="img/no-location.png" class="error-loc" name="ei" />
+<div class="body">    
+
+<div id="loader"></div>
+    
+<div style="display: none;" id="myDiv" class="animate-bottom">    
+    <div class="location">
+        <h1 class="location-timezone">Location</h1>
+        
+    </div>
+    <div class="date-con">
+    <div class="date">
+        Date
+    </div>
+    <div>
+        <span class="hour">HH</span>:<span class="munite">MM</span>
+    </div>
+    </div>
+    
+    <div class="icon-con">
+        <canvas class="icon" width="128" height="128"></canvas>
+        </div>
+    <div class="temperature">
+        <div class="degree-section">
+        <h2 class="temperature-degree">loading</h2>
+            <span>F</span>
+        </div>
+        
+        <div class="temperature-description">loading</div>
+    </div>
+    <div class="info">
+        <table>
+            <tr>
+                <td>Humidity: </td>
+                <td>    </td>
+                <td>    </td>
+                <td>    </td>
+                <td><div class="humidity">loading</div></td>
+            </tr>
+            <tr>
+                <td>Pressure: </td>
+                <td>    </td>
+                <td>    </td>
+                <td>    </td>
+                <td><div class="pressure">loading</div></td>
+            </tr>
+            <tr>
+                <td>WindSpeed: </td>
+                <td>    </td>
+                <td>    </td>
+                <td>    </td>
+                <td><div class="wind-speed">loading</div></td>
+            </tr>
+        </table>
+        </div>
+    <div class="map-h"><a href="map.html">View Map</a></div>
+    <div class="footer">
+    <div class="credits">Developed & Designed by <br />
+    <img src="img/cirlorm.png" style="width: 30px; height=30px"/>
+    </div>
+    </div>
+
+<script src="js/skycons.js"></script>
+<script src="js/App.js"></script>
+    </div>
+    
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 20000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+    
+<!-- Welcome to my first javascript project with is a weather app for showing wheather conditions
+developer is Akoto Selorm Jonathan (Cirlorm)
+javascript developer -->
+    </div>
+</body>
+</html>
